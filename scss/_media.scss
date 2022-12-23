@@ -1,0 +1,32 @@
+@media (max-width: 830px) {
+  .header {
+    &__action {
+      justify-self: end;
+    }
+  }
+  
+  .menu {
+    &.active {
+      top: 0;
+    }
+    padding: 60px 0 0 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background-color: rgba(0, 0, 0, 0.9);
+    top: -100%;
+    left: 0;
+    transition-duration: 0.5s;
+    overflow: auto;
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    column-gap: none;
+    @include adaptiveValue('row-gap', 180, 60);
+    justify-items: center;
+    align-content: start;
+  }
+  .burger {
+    display: block;
+  }
+}

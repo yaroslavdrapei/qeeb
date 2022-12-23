@@ -37,4 +37,10 @@
   padding: 15px 30px;
   font-family: $main;
   border-radius: 50px;
+  transition: all 0.3s ease 0s;
+  border: 1px solid $blue;
+  &:hover {
+    background-color: transparent;
+    color: $blue;
+  }
 }

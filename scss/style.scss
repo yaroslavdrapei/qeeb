@@ -1,6 +1,94 @@
-@import "null", "fonts", "vars", "mixins", "blocks", "media";
+@import "null", "fonts", "vars", "mixins", "blocks";
 
 body {
   background-color: $black;
   color:#fff;
+  font-family: $main;
 }
+
+.header {
+  padding: 40px 0;
+  &__inner {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    column-gap: 10px;
+  }
+
+  &__logo {
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__menu {
+    justify-self: center;
+  }
+
+  // &__action {}
+
+  &__btn {
+    font-size: 16px;
+    line-height: calc(20 / 16 * 100%);
+    font-weight: 400;
+  }
+}
+
+.menu {
+  display: grid;
+  grid-auto-flow: column;
+  column-gap: 40px;
+  &__item {
+    font-size: 18px;
+    line-height: calc(22 / 18 * 100%);
+    color: $white;
+    @include hoverUnderline($blue)
+  }
+}
+
+.burger {
+  position: relative;
+  right: 0;
+  top: 0;
+  display: none;
+  width: 40px;
+  height: 25px;
+  z-index: 100;
+  justify-self: end;
+
+  span {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: $white;
+    transition-duration: 0.3s;
+  }
+
+  *:nth-child(1) {top: 0;}
+  *:nth-child(2) {top: 11px;}
+  *:nth-child(3) {bottom: 0;}
+
+  span:last-child {
+    margin: 0;
+  }
+
+  &.active {
+    *:nth-child(1) {
+      transform: rotate(45deg);
+      top: 11px;
+    }
+
+    *:nth-child(2) {
+      display: none;
+    }
+
+    *:nth-child(3) {
+      transform: rotate(-45deg);
+      bottom: 11px;
+    }
+  }
+}
+
+@import "media";
