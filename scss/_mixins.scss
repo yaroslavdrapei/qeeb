@@ -1,0 +1,28 @@
+@mixin adaptiveValue($prop, $startSize, $minSize) {
+  $addSize: $startSize - $minSize;
+  #{$prop}: $startSize + px;
+  @media (max-width: #{$container + px}) {  
+    #{$prop}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$container - 320}));
+  }
+}
+
+@mixin hoverUnderline($color) {
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: $color;
+    transform: scale(0);
+    transition: transform 0.3s ease 0s;
+  }
+
+  &:hover {
+    &:after {
+      transform: scale(1);      
+    }
+  }
+}

@@ -1,0 +1,40 @@
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  max-width: 1620px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.title {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: calc(36 / 30 * 100%);
+  font-family: $second;
+  text-transform: uppercase;
+}
+
+.mini-title {
+  font-family: $main;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: calc(30 / 24 * 100%);
+}
+
+.btn {
+  background-color: $blue;
+  color: $grey;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: calc(22 / 18 * 100%);
+  padding: 15px 30px;
+  font-family: $main;
+  border-radius: 50px;
+}
