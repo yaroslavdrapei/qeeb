@@ -100,42 +100,30 @@
     flex-direction: column;
     align-items: flex-start;
     &__subtitle {
-      // display: inline-block;
       padding-left: 10px;
+    }
+  }
+
+  .collections {
+    &__btn {
+      * {
+        color: $white;
+      }
     }
   }
 }
 
-/*
-.intro {
+@media (max-width: 430px) {
+  .collection {
+    padding-right: 10px;
+    grid-template-columns: minmax(70px, 100px) 1fr;
+    grid-template-areas: 
+      "img text"
+      ". prices"
+    ;
+    &__prices {
+      margin-top: -10px;
+    }
+  }
 
-		&__inner {}
-
-		&__subtitle {}
-
-		&__title {}
-
-		&__btn {}
-
-		&__profiles {}
-
-		&__profile {}
-
-		&__stats {}
-
-		&__img {}
 }
-.container {
-}
-.title {
-}
-.btn {
-}
-.stat {
-
-		&__title {}
-
-		&__subtitle {}
-}
-
-*/

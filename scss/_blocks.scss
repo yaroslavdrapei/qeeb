@@ -7,7 +7,7 @@
 }
 
 .container {
-  max-width: 1620px;
+  max-width: 1668px;
   width: 100%;
   margin: 0 auto;
   padding: 0 24px;
@@ -26,6 +26,12 @@
   font-weight: 700;
   font-size: 24px;
   line-height: calc(30 / 24 * 100%);
+}
+
+.label {
+  color: #818698;
+  font-size: 16px;
+  line-height: calc(20 / 16 * 100%);
 }
 
 .btn {

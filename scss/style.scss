@@ -186,12 +186,8 @@ body {
 
 .stat {
   // &__title {}
-
   &__subtitle {
     text-align: center;
-    color: #818698;
-    font-size: 16px;
-    line-height: calc(20 / 16 * 100%);
   }
 }
 
@@ -206,8 +202,8 @@ body {
   &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(245px, 245px));
-    column-gap: 20px;
-    row-gap: 20px; //temporary
+    column-gap: 30px;
+    row-gap: 30px; //temporary
     justify-content: center;
   }
 }
@@ -229,6 +225,98 @@ body {
   }
 }
 
+.collections {
+  padding: 137px 0px 86px;
+  background-color: #1D1E22;
+  // &__inner {}
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 65, 24);
+  }
+
+  &__grid {
+    @include adaptiveValue('margin-bottom', 72, 40);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(270px, 520px));
+    grid-template-rows: 1fr;
+    overflow: hidden;
+    gap: 30px;
+    justify-content: center;
+    
+  }
+
+
+  &__btn {
+    display: flex;
+    justify-content: center;
+    * {
+      font-size: 16px;
+      padding: 15px 20px;
+    }
+  }
+}
+
+.collection {
+  border-radius: 30px;
+  background-color: $grey;
+  padding: 10px 40px 10px 10px;
+  display: grid;
+  grid-template-columns: minmax(70px, 100px) 1fr auto;
+  grid-template-areas: 
+    "img text prices"
+  ;
+  column-gap: 24px;
+  align-items: center;
+  &__img {
+    grid-area: img;
+    position: relative;
+    &::before {
+      content: attr(data-before);
+      position: absolute;
+      width: 34px;
+      height: 34px;
+      background-color: $blue;
+      color: $black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 50%;
+      right: -10px;
+      font-size: 16px;
+      line-height: calc(20 / 16 * 100%);
+    }
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+  &__text {
+    grid-area: text;
+  }
+
+  &__title {
+    font-weight: 400;
+  }
+
+  // &__subtitle {}
+
+  &__prices {
+    grid-area: prices;
+  }
+
+  &__eth {
+    font-size: 16px;
+    line-height: calc(20 / 16 * 100%);
+  }
+
+  // &__price {}
+
+  &__percent {
+    font-size: 14px;
+    line-height: calc(18 / 14 * 100%);
+    color: $blue;
+  }
+}
 
 
 @import "media";
