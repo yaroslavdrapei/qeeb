@@ -8,6 +8,7 @@ body {
 
 .header {
   padding: 40px 0;
+  @include adaptiveValue('margin-bottom', 75, 60);
   &__inner {
     display: grid;
     grid-template-columns: auto 1fr auto;
@@ -88,6 +89,109 @@ body {
       transform: rotate(-45deg);
       bottom: 11px;
     }
+  }
+}
+
+.intro {
+
+  &__inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: start;
+    column-gap: 54px;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: 
+      "sub sub img"   
+      "title title img"
+      "btn prof img "
+      "stats stats img"
+    ;
+    column-gap: 54px;
+    align-items: start;
+  }
+
+  &__subtitle {
+    @include adaptiveValue('font-size', 36, 18);
+    text-transform: none;
+    margin-bottom: 16px;
+    grid-area: sub;
+    margin-top: 50px;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-family: $second;
+    @include adaptiveValue('font-size', 72, 30);
+    line-height: calc(86 / 72 * 100%);
+    max-width: 704px;
+    grid-area: title;
+    @include adaptiveValue('margin-bottom', 64, 32);
+  }
+
+  &__btn {
+    display: inline-block;
+    grid-area: btn;
+  }
+
+  &__profiles {
+    grid-area: prof;
+    position: relative;
+    display: flex;
+    *:not(:first-child) {
+      position: relative;
+    }
+    *:nth-child(2) {
+      right: 15px;
+    }
+    *:nth-child(3) {
+      right: 30px;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      left: 131px;
+      background: url("../img/svgs/arrow1.svg") 0 0 / auto no-repeat;
+      width: 130px;
+      height: 119px;
+    }
+  }
+
+  // &__profile {}
+
+  &__stats {
+    margin-top: 80px;
+    width: 100%;
+    display: inline-grid;
+    grid-template-columns: repeat(3, auto);
+    justify-content: start;
+    // @include adaptiveValue('column-gap', 116, 30);
+    column-gap: 116px;
+    grid-area: stats;
+  }
+
+  &__img {
+    @include adaptiveValue('max-width', 775, 100);
+    grid-area: img;
+    grid-row: span 5;
+    img {
+      max-width: 100%;
+      object-fit: cover;
+      box-shadow: 0px -10px 20px 6px #2E2B56, 0px 10px 20px -3px $blue;
+      //#2E2B56
+      @include adaptiveValue('border-radius', 180, 50);
+    }
+  }
+}
+
+.stat {
+  // &__title {}
+
+  &__subtitle {
+    text-align: center;
+    color: #818698;
+    font-size: 16px;
+    line-height: calc(20 / 16 * 100%);
   }
 }
 
