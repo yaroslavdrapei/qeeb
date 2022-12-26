@@ -318,5 +318,80 @@ body {
   }
 }
 
+.trending {
+  @include adaptiveValue('margin-top', 120, 80);
+  @include adaptiveValue('margin-bottom', 120, 80);
+  // &__inner {}
+
+  &__title {
+    @include adaptiveValue('margin-bottom', 72, 44);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 383px));
+    column-gap: 29px;
+    row-gap: 20px; //temporary
+    justify-content: center;
+  }
+}
+
+.trend {
+  background-color: #1D1E22;
+  padding: 0px 13px 13px 13px;
+  border-radius: 30px;
+  &__img {
+    margin: 0px -13px 0px;
+    @include adaptiveValue('margin-bottom', 16, 24);
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    margin-bottom: 8px;
+  }
+
+  &__tag {
+    margin-bottom: 33px;
+  }
+
+  &__prices {
+    background-color: $grey;
+    border-radius: 20px;
+    padding: 16px 24px;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-areas: 
+      "lprice lbid"
+      "price bid"
+    ;
+    row-gap: 8px;
+    justify-content: space-between;
+  }
+
+  &__label-price {
+    grid-area: lprice;
+  }
+
+  &__price {
+    grid-area: price;
+    font-size: 14px;
+    line-height: calc(19 / 14 * 100%);
+  }
+
+  &__label-bid {
+    grid-area: lbid;
+  }
+
+  &__bid {
+    grid-area: bid;
+    font-size: 14px;
+    line-height: calc(19 / 14 * 100%);
+  }
+}
+
+
 
 @import "media";

@@ -10,7 +10,8 @@
   max-width: 1668px;
   width: 100%;
   margin: 0 auto;
-  padding: 0 24px;
+  @include adaptiveValue('padding-right', 24, 15);
+  @include adaptiveValue('padding-left', 24, 15);
 }
 
 .title {
