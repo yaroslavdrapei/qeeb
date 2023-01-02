@@ -1,8 +1,8 @@
-@import "null", "fonts", "vars", "mixins", "blocks";
+@import 'null', 'fonts', 'vars', 'mixins', 'blocks';
 
 body {
   background-color: $black;
-  color:#fff;
+  color: #fff;
   font-family: $main;
 }
 
@@ -44,7 +44,7 @@ body {
     font-size: 18px;
     line-height: calc(22 / 18 * 100%);
     color: $white;
-    @include hoverUnderline($blue)
+    @include hoverUnderline($blue);
   }
 }
 
@@ -67,9 +67,15 @@ body {
     transition-duration: 0.3s;
   }
 
-  *:nth-child(1) {top: 0;}
-  *:nth-child(2) {top: 11px;}
-  *:nth-child(3) {bottom: 0;}
+  *:nth-child(1) {
+    top: 0;
+  }
+  *:nth-child(2) {
+    top: 11px;
+  }
+  *:nth-child(3) {
+    bottom: 0;
+  }
 
   span:last-child {
     margin: 0;
@@ -101,12 +107,11 @@ body {
     column-gap: 54px;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-template-areas: 
-      "sub sub img"   
-      "title title img"
-      "btn prof img "
-      "stats stats img"
-    ;
+    grid-template-areas:
+      'sub sub img'
+      'title title img'
+      'btn prof img '
+      'stats stats img';
     column-gap: 54px;
     align-items: start;
   }
@@ -151,7 +156,7 @@ body {
       content: '';
       position: absolute;
       left: 131px;
-      background: url("../img/svgs/arrow1.svg") 0 0 / auto no-repeat;
+      background: url('../img/svgs/arrow1.svg') 0 0 / auto no-repeat;
       width: 130px;
       height: 119px;
     }
@@ -177,7 +182,7 @@ body {
     img {
       max-width: 100%;
       object-fit: cover;
-      box-shadow: 0px -10px 20px 6px #2E2B56, 0px 10px 20px -3px $blue;
+      box-shadow: 0px -10px 20px 6px #2e2b56, 0px 10px 20px -3px $blue;
       //#2E2B56
       @include adaptiveValue('border-radius', 180, 50);
     }
@@ -227,7 +232,7 @@ body {
 
 .collections {
   padding: 137px 0px 86px;
-  background-color: #1D1E22;
+  background-color: #1d1e22;
   // &__inner {}
 
   &__title {
@@ -242,9 +247,7 @@ body {
     overflow: hidden;
     gap: 30px;
     justify-content: center;
-    
   }
-
 
   &__btn {
     display: flex;
@@ -262,9 +265,7 @@ body {
   padding: 10px 40px 10px 10px;
   display: grid;
   grid-template-columns: minmax(70px, 100px) 1fr auto;
-  grid-template-areas: 
-    "img text prices"
-  ;
+  grid-template-areas: 'img text prices';
   column-gap: 24px;
   align-items: center;
   &__img {
@@ -337,7 +338,7 @@ body {
 }
 
 .trend {
-  background-color: #1D1E22;
+  background-color: #1d1e22;
   padding: 0px 13px 13px 13px;
   border-radius: 30px;
   &__img {
@@ -363,10 +364,9 @@ body {
     padding: 16px 24px;
     display: grid;
     grid-template-columns: auto auto;
-    grid-template-areas: 
-      "lprice lbid"
-      "price bid"
-    ;
+    grid-template-areas:
+      'lprice lbid'
+      'price bid';
     row-gap: 8px;
     justify-content: space-between;
   }
@@ -392,6 +392,85 @@ body {
   }
 }
 
+.insights {
+  @include adaptiveValue('padding-top', 120, 80);
+  background-color: #1d1e22;
+  // &__inner {}
 
+  &__title {
+    @include adaptiveValue('margin-bottom', 48, 40);
+  }
 
-@import "media";
+  &__posts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 500px));
+    column-gap: 60px;
+    row-gap: 40px;
+    justify-content: center;
+  }
+}
+
+.post {
+  &__img {
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+    margin-bottom: 32px;
+  }
+
+  &__info {
+    display: flex;
+    color: #dfe5f5;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  &__category {
+    background-color: #f3f5f6;
+    font-size: 12px;
+    line-height: calc(18 / 12 * 100%);
+    padding: 5px 12px;
+    color: #0a142f;
+    border-radius: 36px;
+    margin-right: 14px;
+  }
+
+  // &__author {}
+
+  &__separator {
+    margin: 0px 4px;
+  }
+
+  // &__date {}
+
+  &__title {
+    font-size: 30px;
+    line-height: calc(48 / 30 * 100%);
+    font-weight: 700;
+    @include adaptiveValue('margin-bottom', 48, 32);
+  }
+
+  &__btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    border-radius: 30px;
+    padding: 18px 19px 18px 19px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: calc(20 / 16 * 100%);
+    border: 1px solid $white;
+    position: relative;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: $white;
+      color: $black;
+    }
+    div {
+      margin-left: 10px;
+    }
+  }
+}
+
+@import 'media';

@@ -1,16 +1,16 @@
 @font-face {
   font-family: 'icons';
-  src:  url('../fonts/icons.eot?pn69f3');
-  src:  url('../fonts/icons.eot?pn69f3#iefix') format('embedded-opentype'),
-    url('../fonts/icons.ttf?pn69f3') format('truetype'),
-    url('../fonts/icons.woff?pn69f3') format('woff'),
-    url('../fonts/icons.svg?pn69f3#icons') format('svg');
+  src:  url('../fonts/icons.eot?s17u91');
+  src:  url('../fonts/icons.eot?s17u91#iefix') format('embedded-opentype'),
+    url('../fonts/icons.ttf?s17u91') format('truetype'),
+    url('../fonts/icons.woff?s17u91') format('woff'),
+    url('../fonts/icons.svg?s17u91#icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
 }
 
-[class^="_icon-"]::before, [class*=" _icon-"]::before {
+[class^="_icon-"], [class*=" _icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icons' !important;
   speak: never;
@@ -25,6 +25,12 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+._icon-readmore:before {
+  content: "\e90b";
+}
+._icon-readmorearrow:before {
+  content: "\e90c";
+}
 ._icon-android:before {
   content: "\e900";
 }

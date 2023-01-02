@@ -112,6 +112,22 @@
       }
     }
   }
+
+  .post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__title {
+      text-align: center;
+    }
+    &__info {
+      text-transform: uppercase;
+    }
+    &__category {
+      background-color: #0E121B;
+      color: $white;
+    }
+  }
 }
 
 @media (max-width: 430px) {
