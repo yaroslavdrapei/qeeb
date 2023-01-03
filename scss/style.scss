@@ -394,6 +394,7 @@ body {
 
 .insights {
   @include adaptiveValue('padding-top', 120, 80);
+  @include adaptiveValue('padding-bottom', 120, 80);
   background-color: #1d1e22;
   // &__inner {}
 
@@ -456,7 +457,7 @@ body {
     display: inline-flex;
     align-items: center;
     border-radius: 30px;
-    padding: 18px 19px 18px 19px;
+    padding: 18px 47px 18px 19px;
     font-weight: 700;
     font-size: 16px;
     line-height: calc(20 / 16 * 100%);
@@ -470,7 +471,62 @@ body {
     div {
       margin-left: 10px;
     }
+
+    &::before {
+      position: absolute;
+      right: 20px;
+    }
   }
+}
+
+.download {
+  @include adaptiveValue('padding-top', 120, 80);
+  @include adaptiveValue('padding-bottom', 120, 80);
+  &__inner {
+    background-color: #1D1E22;
+    border: 1px solid #000000;
+    border-radius: 50px;
+    padding: 95px 0;
+    @include adaptiveValue('padding-right', 72, 0);
+    @include adaptiveValue('padding-left', 72, 0);
+    display: grid;
+    grid-template-columns: minmax(100px, 600px) auto;
+    align-items: center;
+    column-gap: 20px;  
+  }
+
+  // &__title {}
+
+  &__btns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(auto, 270px));
+    justify-content: end;
+    column-gap: 16px;
+    row-gap: 24px;
+    @include adaptiveValue('padding-right', 168, 0);
+    * {
+      width: 100%;
+      text-transform: capitalize;
+      font-family: Inter;
+      font-weight: 500;
+      text-align: center;
+      div {
+        margin-right: 11px;
+      }
+    }
+  }
+
+  &__appstore {
+    color: $white;
+    background-color: #2C2D31;
+    border: #2C2D31;
+    &:hover {
+      color: #2C2D31;
+      background-color: $white;
+    }
+  }
+
+  // &__googleplay {}
 }
 
 @import 'media';

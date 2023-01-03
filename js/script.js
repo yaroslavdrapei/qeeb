@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function move(e) {
     const btn = document.querySelector('.header__btn'),
           title = document.querySelector('.insights__title'),
-          icons = document.querySelectorAll('.post__btn div')
+          icons = document.querySelectorAll('.post__btn')
     if (e.matches) {
       document.querySelector('.menu').append(btn.cloneNode(true));
       btn.remove()

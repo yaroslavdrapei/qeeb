@@ -1,3 +1,11 @@
+@media (max-width: 1500px) {
+  .download {
+    &__btns {
+      padding-right: 0;
+    }
+  }
+}
+
 @media (max-width: 830px) {
   .title {
     text-align: center;
@@ -126,6 +134,23 @@
     &__category {
       background-color: #0E121B;
       color: $white;
+    }
+  }
+
+  .download {
+    &__inner {
+      background-color: transparent;
+      grid-template-columns: 1fr;
+      border: none;
+      padding: 0;
+    }
+
+    &__title {
+      margin-bottom: 32px;
+    }
+    &__btns {
+      grid-template-columns: minmax(auto, 270px);
+      justify-content: center;
     }
   }
 }

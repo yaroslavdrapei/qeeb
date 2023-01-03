@@ -16,7 +16,7 @@
 
 .title {
   font-weight: 400;
-  font-size: 30px;
+  @include adaptiveValue('font-size', 30, 24);
   line-height: calc(36 / 30 * 100%);
   font-family: $second;
   text-transform: uppercase;
