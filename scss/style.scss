@@ -529,4 +529,156 @@ body {
   // &__googleplay {}
 }
 
+.footer {
+  padding: 48px 0;
+  background-color: #1D1E22;
+  &__inner {
+    // display: grid;
+    font-size: 16px;
+    line-height: calc(30 / 16 * 100%);
+    color: #DFE5F5;
+    padding: 0 88px;
+  }
+
+  &__up {
+    display: grid;
+    column-gap: 16px;
+    grid-template-columns: minmax(150px, 231px) repeat(2, minmax(auto, 231px)) auto;
+    margin-bottom: 48px;
+  }
+
+  &__down {
+    display: grid;
+    grid-template-columns: auto 1fr 1fr auto;
+  }
+
+  &__logo {
+    align-self: center;
+    img {
+      max-width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__links {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    a {
+      font-size: 16px;
+      line-height: calc(30 / 16 * 100%);
+      color: #DFE5F5;
+      font-family: $main;
+    }
+  }
+
+  &__marketplace {
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    a {
+      font-size: 16px;
+      line-height: calc(30 / 16 * 100%);
+      color: #DFE5F5;
+      font-family: $main;
+    }
+  }
+
+  &__mini-title {
+    color: $white;
+    font-size: 18px;
+    line-height: 100%;
+    font-family: $second;
+    font-weight: 400;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    margin-bottom: 10px;
+  }
+
+  &__form {
+    justify-self: end;
+  }
+
+  // &__rights {}
+
+  &__terms {
+    justify-self: end;
+  }
+
+  &__privacy {
+    margin-left: 10px;
+  }
+
+  &__networks {
+    display: grid;
+    grid-auto-flow: column;
+    column-gap: 20px;
+    justify-content: start;
+    a {
+      font-size: 22px;
+      color: #818698;
+    }
+    ._icon-inter, ._icon-git {
+      display: none;
+    }
+  }
+
+  &__office {display: none;}
+  &__contact {display: none;}
+}
+
+.form {
+  @include adaptiveValue('padding-right', 48, 35);
+  @include adaptiveValue('padding-left', 48, 35);
+  @include adaptiveValue('padding-top', 80, 60);
+  @include adaptiveValue('padding-bottom', 80, 60);
+  color: $black;
+  background-color: $blue;
+  border-radius: 30px;
+  max-width: 495px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: 
+    "title title"
+    "input btn"
+  ;
+  position: relative;
+  align-items: start;
+  &::after {
+    content: '';
+    display: block;
+    position: relative;
+    width: 100%;
+    top: 8px;
+    height: 1px;
+    background-color: #3FC9B0;
+    grid-column: span 2;
+  }
+  &__title {
+    @include adaptiveValue('font-size', 24, 20);
+    line-height: calc(29 / 24 * 100%);
+    font-family: $second;
+    font-weight: 400;
+    margin-bottom: 10px;
+    grid-area: title;
+  }
+
+  &__input {
+    background-color: transparent;
+    color: $black;
+    font-family: $inter;
+    grid-area: input;
+    padding-right: 15px;
+    &::placeholder {
+      color: $black;
+    }
+  }
+
+  &__btn {
+    font-size: 21px;
+    background-color: transparent;
+    grid-area: btn;
+  }
+}
+
 @import 'media';

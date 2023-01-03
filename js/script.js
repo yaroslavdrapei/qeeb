@@ -6,19 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   const breakpoint = window.matchMedia('(max-width: 830px)')
-  // function move(e, ...rest) {
-  //   const [sel, bp, action1, action2] = rest
-  //   const el = document.querySelector(sel);
-  //   if (e.matches) {
-  //     action1()
-  //   } else {
-  //     action2()
-  //   }
-  // }
   function move(e) {
     const btn = document.querySelector('.header__btn'),
           title = document.querySelector('.insights__title'),
-          icons = document.querySelectorAll('.post__btn')
+          icons = document.querySelectorAll('.post__btn'),
+          footer__copyright = document.querySelector('.footer__rights span')
     if (e.matches) {
       document.querySelector('.menu').append(btn.cloneNode(true));
       btn.remove()
@@ -27,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.classList.remove('_icon-readmorearrow')
         icon.classList.add('_icon-readmore')
       })
+      footer__copyright.textContent = 'Copyright'
     } else {
       document.querySelector('.header__action').append(btn.cloneNode(true));
       btn.remove()
@@ -35,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.classList.remove('_icon-readmore')
         icon.classList.add('_icon-readmorearrow')
       })
+      footer__copyright.textContent = 'Qeeb'
     }
   }
   breakpoint.addListener(move)

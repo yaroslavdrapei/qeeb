@@ -6,6 +6,45 @@
   }
 }
 
+@media (max-width: 1100px) {
+  .footer {
+    &__up {
+      grid-template-columns: minmax(150px, 231px) minmax(auto, 231px) auto;
+    }
+    &__marketplace {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    &__logo {
+      margin-top: 28px;
+      align-self: start;
+    }
+    &__down {
+      grid-template-columns: 1fr auto;
+      row-gap: 10px;
+      grid-template-areas: 
+        "rights networks"
+        "terms ."
+        "privacy ."
+      ;
+    }
+    &__rights {grid-area: rights;}
+    &__terms {
+      justify-self: start;
+      grid-area: terms;
+    }
+    &__privacy {
+      grid-area: privacy;
+      margin-left: 0;
+    }
+    &__networks {grid-area: networks;}
+  }
+}
+
 @media (max-width: 830px) {
   .title {
     text-align: center;
@@ -151,6 +190,75 @@
     &__btns {
       grid-template-columns: minmax(auto, 270px);
       justify-content: center;
+    }
+  }
+
+  .footer {
+    &__up {display: block;}
+    &__logo {display: none;}
+    &__links {display: none;}
+    &__form {margin: 0 auto;}
+
+    &__office {
+      display: block;
+      grid-area: office;
+    }
+
+    &__contact {
+      display: block;
+      grid-area: contact;
+    }
+
+    &__inner {
+      padding: 0;
+      font-family: $inter;
+      color: #E0E5F3;
+    }
+
+    &__mini-title {
+      font-family: $inter;
+      font-weight: 600;
+    }
+
+    &__terms {
+      justify-self: center;
+    }
+
+    &__networks {
+      justify-content: center;
+      a {
+        color: $white;
+      }
+      
+      ._icon-inter, ._icon-git {display: block;}
+
+      ._icon-inter {
+        color: $blue;
+      }
+
+      ._icon-yt, ._icon-inst, ._icon-in, ._icon-tt {display: none;}
+    }
+    &__down {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "office"
+        "contact"
+        "terms"
+        "privacy"
+        "networks"
+        "rights"
+      ;
+      row-gap: 20px;
+      * {
+        text-align: center;
+      }
+    }
+  }
+
+  .form {
+    &__title {
+      font-family: $inter;
+      font-weight: 600;
     }
   }
 }
