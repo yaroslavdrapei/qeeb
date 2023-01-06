@@ -34,4 +34,26 @@ document.addEventListener('DOMContentLoaded', () => {
   breakpoint.addListener(move)
 
   move(breakpoint)
+
+  new Swiper('.categories__inner', {
+    pagination: {
+      el: '.categories__pagination',
+      clickable: true
+    },
+
+    navigation: {
+      nextEl: '.categories__next',
+      prevEl: '.categories__prev',
+    },
+
+    slidesPerView: 'auto',
+    spaceBetween: 30,
+    centeredSlides: true,
+    autoHeight: true,
+    breakpoints: {
+      830: {
+        centeredSlides: false,
+      }
+    }
+  })
 })

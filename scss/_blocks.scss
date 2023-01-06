@@ -6,6 +6,10 @@
   height: 100%;
 }
 
+.page {
+  min-width: 0; //this makes swiper work
+} 
+
 .container {
   max-width: 1668px;
   width: 100%;
