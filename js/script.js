@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   burger.addEventListener('click', () => {
     burger.classList.toggle('active')
     document.querySelector('.menu').classList.toggle('active')
+    document.body.classList.toggle('lock')
   })
 
   const breakpoint = window.matchMedia('(max-width: 830px)')
@@ -61,6 +62,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
     slidesPerView: 'auto',
     spaceBetween: 30,
+    centeredSlides: true,
+    autoHeight: true,
+    breakpoints: {
+      830: {
+        centeredSlides: false,
+      }
+    }
+  })
+
+  new Swiper('.trending__inner', {
+    pagination: {
+      el: '.trending__pagination',
+      clickable: true
+    },
+
+    navigation: {
+      nextEl: '.trending__next',
+      prevEl: '.trending__prev',
+    },
+
+    slidesPerView: 'auto',
+    spaceBetween: 29,
     centeredSlides: true,
     autoHeight: true,
     breakpoints: {

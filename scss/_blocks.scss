@@ -8,7 +8,7 @@
 
 .page {
   min-width: 0; //this makes swiper work
-} 
+}
 
 .container {
   max-width: 1668px;
@@ -54,4 +54,66 @@
     background-color: transparent;
     color: $blue;
   }
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translate(10%, -20%);
+  z-index: 1;
+  width: 70px;
+  height: 70px;
+  background-color: $grey;
+  border-radius: 50%;
+  transition: all 0.2s ease 0s;
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 26px;
+    height: 2px;
+    background-color: $white;
+  }
+
+  &::after {
+    content: '';
+    width: 15px;
+    height: 15px;
+    border-right: 2px solid $white;
+    border-top: 2px solid $white;
+    position: absolute;
+    top: 50%;
+    left: 54%;
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &-prev {
+    left: 3px;
+    transform: translateY(-20%);
+    &::after {
+      left: 46%;
+      transform: translate(-50%, -50%) rotate(-135deg);
+    }
+  }
+  &-next {
+    transform: translateY(-20%);
+    right: 3px;
+  }
+
+  &:hover {
+    background-color: $blue;  
+    &::before {
+      background-color: $black;
+    }
+    &::after {
+      border-right-color: $black;
+      border-top-color: $black;
+    }
+  }
+}
+
+.lock {
+  overflow: hidden;
 }

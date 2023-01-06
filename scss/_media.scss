@@ -316,12 +316,6 @@
 }
 
 @media (max-width: 430px) {
-  .categories {
-    &__next,
-    &__prev {
-      display: none;
-    }
-  }
   .collection {
     padding-right: 10px;
     grid-template-columns: minmax(70px, 100px) 1fr;
@@ -331,5 +325,9 @@
     &__prices {
       margin-top: -10px;
     }
+  }
+
+  .slider-arrow {
+    display: none;
   }
 }

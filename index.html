@@ -131,8 +131,12 @@
               </div>
               <div class="categories__pagination swiper-pagination"></div>
             </div>
-            <button class="categories__prev"></button>
-            <button class="categories__next"></button>
+            <button
+              class="categories__prev slider-arrow slider-arrow-prev"
+            ></button>
+            <button
+              class="categories__next slider-arrow slider-arrow-next"
+            ></button>
           </div>
         </section>
         <section class="collections onerow">
@@ -140,7 +144,7 @@
             <div class="collections__inner">
               <h3 class="collections__title title">top collections</h3>
               <label class="collections__switch switch">
-                <input type="checkbox"/>
+                <input type="checkbox" />
                 <div class="dot"></div>
                 <span class="switch__first">7 Days</span>
                 <span class="switch__second">30 Days</span>
@@ -316,69 +320,82 @@
                 </div>
               </div>
               <div class="collections__btn">
-                <button type="button" id="showAll" class="btn">See All Collection</button>
+                <button type="button" id="showAll" class="btn">
+                  See All Collection
+                </button>
               </div>
             </div>
           </div>
         </section>
         <section class="trending">
           <div class="container">
-            <div class="trending__inner">
+            <div class="trending__inner swiper">
               <h3 class="trending__title title">Trending nfts</h3>
-              <div class="trending__grid">
-                <div class="trend">
-                  <div class="trend__img">
-                    <img src="./img/trending/1.png" alt="Trend" />
-                  </div>
-                  <h4 class="trend__title mini-title">Rare Crypto</h4>
-                  <div class="trend__tag">#QA5200 The Kive</div>
-                  <div class="trend__prices">
-                    <div class="trend__label-price label">Price</div>
-                    <div class="trend__price">0.03 ETH</div>
-                    <div class="trend__label-bid label">Highest bid</div>
-                    <div class="trend__bid">0.07 ETH</div>
-                  </div>
-                </div>
-                <div class="trend">
-                  <div class="trend__img">
-                    <img src="./img/trending/2.png" alt="Trend" />
-                  </div>
-                  <h4 class="trend__title mini-title">Kive Boy</h4>
-                  <div class="trend__tag">#QA5200 The Kive</div>
-                  <div class="trend__prices">
-                    <div class="trend__label-price label">Price</div>
-                    <div class="trend__price">0.03 ETH</div>
-                    <div class="trend__label-bid label">Highest bid</div>
-                    <div class="trend__bid">0.07 ETH</div>
+              <div class="trending__grid swiper-wrapper">
+                <div class="swiper-slide">
+                  <div class="trend">
+                    <div class="trend__img">
+                      <img src="./img/trending/1.png" alt="Trend" />
+                    </div>
+                    <h4 class="trend__title mini-title">Rare Crypto</h4>
+                    <div class="trend__tag">#QA5200 The Kive</div>
+                    <div class="trend__prices">
+                      <div class="trend__label-price label">Price</div>
+                      <div class="trend__price">0.03 ETH</div>
+                      <div class="trend__label-bid label">Highest bid</div>
+                      <div class="trend__bid">0.07 ETH</div>
+                    </div>
                   </div>
                 </div>
-                <div class="trend">
-                  <div class="trend__img">
-                    <img src="./img/trending/3.png" alt="Trend" />
-                  </div>
-                  <h4 class="trend__title mini-title">Kive Boy</h4>
-                  <div class="trend__tag">#QA5200 The Kive</div>
-                  <div class="trend__prices">
-                    <div class="trend__label-price label">Price</div>
-                    <div class="trend__price">0.03 ETH</div>
-                    <div class="trend__label-bid label">Highest bid</div>
-                    <div class="trend__bid">0.07 ETH</div>
+                <div class="swiper-slide">
+                  <div class="trend">
+                    <div class="trend__img">
+                      <img src="./img/trending/2.png" alt="Trend" />
+                    </div>
+                    <h4 class="trend__title mini-title">Kive Boy</h4>
+                    <div class="trend__tag">#QA5200 The Kive</div>
+                    <div class="trend__prices">
+                      <div class="trend__label-price label">Price</div>
+                      <div class="trend__price">0.03 ETH</div>
+                      <div class="trend__label-bid label">Highest bid</div>
+                      <div class="trend__bid">0.07 ETH</div>
+                    </div>
                   </div>
                 </div>
-                <div class="trend">
-                  <div class="trend__img">
-                    <img src="./img/trending/4.png" alt="Trend" />
+                <div class="swiper-slide">
+                  <div class="trend">
+                    <div class="trend__img">
+                      <img src="./img/trending/3.png" alt="Trend" />
+                    </div>
+                    <h4 class="trend__title mini-title">Kive Boy</h4>
+                    <div class="trend__tag">#QA5200 The Kive</div>
+                    <div class="trend__prices">
+                      <div class="trend__label-price label">Price</div>
+                      <div class="trend__price">0.03 ETH</div>
+                      <div class="trend__label-bid label">Highest bid</div>
+                      <div class="trend__bid">0.07 ETH</div>
+                    </div>
                   </div>
-                  <h4 class="trend__title mini-title">Kive Boy</h4>
-                  <div class="trend__tag">#QA5200 The Kive</div>
-                  <div class="trend__prices">
-                    <div class="trend__label-price label">Price</div>
-                    <div class="trend__price">0.03 ETH</div>
-                    <div class="trend__label-bid label">Highest bid</div>
-                    <div class="trend__bid">0.07 ETH</div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="trend">
+                    <div class="trend__img">
+                      <img src="./img/trending/4.png" alt="Trend" />
+                    </div>
+                    <h4 class="trend__title mini-title">Kive Boy</h4>
+                    <div class="trend__tag">#QA5200 The Kive</div>
+                    <div class="trend__prices">
+                      <div class="trend__label-price label">Price</div>
+                      <div class="trend__price">0.03 ETH</div>
+                      <div class="trend__label-bid label">Highest bid</div>
+                      <div class="trend__bid">0.07 ETH</div>
+                    </div>
                   </div>
                 </div>
               </div>
+              <div class="trending__pagination swiper-pagination"></div>
+              <div class="trending__prev slider-arrow slider-arrow-prev"></div>
+              <div class="trending__next slider-arrow slider-arrow-next"></div>
             </div>
           </div>
         </section>
