@@ -35,6 +35,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
   move(breakpoint)
 
+  const collectionsBtn = document.querySelector('#showAll')
+
+  collectionsBtn.addEventListener('click', () => {
+    const collections = document.querySelector('.collections'),
+          collectionsTitle = document.querySelector('.collections__title')
+    collections.classList.toggle('onerow')
+
+    if (collections.classList.contains('onerow')) {
+      collectionsTitle.scrollIntoView()
+    }
+  })
+
+
   new Swiper('.categories__inner', {
     pagination: {
       el: '.categories__pagination',

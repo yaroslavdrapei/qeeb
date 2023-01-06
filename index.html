@@ -135,10 +135,16 @@
             <button class="categories__next"></button>
           </div>
         </section>
-        <section class="collections">
+        <section class="collections onerow">
           <div class="container">
             <div class="collections__inner">
               <h3 class="collections__title title">top collections</h3>
+              <label class="collections__switch switch">
+                <input type="checkbox"/>
+                <div class="dot"></div>
+                <span class="switch__first">7 Days</span>
+                <span class="switch__second">30 Days</span>
+              </label>
               <div class="collections__grid">
                 <div class="collection">
                   <div class="collection__img" data-before="1">
@@ -310,7 +316,7 @@
                 </div>
               </div>
               <div class="collections__btn">
-                <button type="button" class="btn">See All Collection</button>
+                <button type="button" id="showAll" class="btn">See All Collection</button>
               </div>
             </div>
           </div>

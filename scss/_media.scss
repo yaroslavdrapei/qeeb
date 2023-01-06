@@ -7,6 +7,18 @@
 }
 
 @media (max-width: 1100px) {
+  .collections.onerow {
+    .collections__grid {
+      grid-auto-rows: 0;
+      grid-template-rows: repeat(3, auto);
+      overflow-y: hidden;
+      row-gap: 0;
+      > *:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
   .footer {
     &__up {
       grid-template-columns: minmax(150px, 231px) minmax(auto, 231px) auto;
@@ -26,13 +38,14 @@
     &__down {
       grid-template-columns: 1fr auto;
       row-gap: 10px;
-      grid-template-areas: 
-        "rights networks"
-        "terms ."
-        "privacy ."
-      ;
+      grid-template-areas:
+        'rights networks'
+        'terms .'
+        'privacy .';
     }
-    &__rights {grid-area: rights;}
+    &__rights {
+      grid-area: rights;
+    }
     &__terms {
       justify-self: start;
       grid-area: terms;
@@ -41,7 +54,9 @@
       grid-area: privacy;
       margin-left: 0;
     }
-    &__networks {grid-area: networks;}
+    &__networks {
+      grid-area: networks;
+    }
   }
 }
 
@@ -120,7 +135,7 @@
         right: 0;
       }
       &::after {
-        background: url("../img/svgs/arrow2.svg") 0 0 / 100% no-repeat;
+        background: url('../img/svgs/arrow2.svg') 0 0 / 100% no-repeat;
         bottom: -64px;
         @include adaptiveValue('left', 150, 15);
         @include adaptiveValue('width', 300, 120);
@@ -152,10 +167,31 @@
   }
 
   .collections {
-    padding-top: 0;
+    padding: 0;
     background-color: transparent;
+    &__inner {
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "title"
+        "."
+        "grid"
+        "btn"
+      ;
+    }
     &__btn {
       * {
+        color: $white;
+      }
+    }
+  }
+
+  .switch {
+    display: none;
+  }
+
+  .collection {
+    &__img {
+      &::before {
         color: $white;
       }
     }
@@ -172,7 +208,7 @@
       text-transform: uppercase;
     }
     &__category {
-      background-color: #0E121B;
+      background-color: #0e121b;
       color: $white;
     }
   }
@@ -195,10 +231,18 @@
   }
 
   .footer {
-    &__up {display: block;}
-    &__logo {display: none;}
-    &__links {display: none;}
-    &__form {margin: 0 auto;}
+    &__up {
+      display: block;
+    }
+    &__logo {
+      display: none;
+    }
+    &__links {
+      display: none;
+    }
+    &__form {
+      margin: 0 auto;
+    }
 
     &__office {
       display: block;
@@ -213,7 +257,7 @@
     &__inner {
       padding: 0;
       font-family: $inter;
-      color: #E0E5F3;
+      color: #e0e5f3;
     }
 
     &__mini-title {
@@ -230,25 +274,32 @@
       a {
         color: $white;
       }
-      
-      ._icon-inter, ._icon-git {display: block;}
+
+      ._icon-inter,
+      ._icon-git {
+        display: block;
+      }
 
       ._icon-inter {
         color: $blue;
       }
 
-      ._icon-yt, ._icon-inst, ._icon-in, ._icon-tt {display: none;}
+      ._icon-yt,
+      ._icon-inst,
+      ._icon-in,
+      ._icon-tt {
+        display: none;
+      }
     }
     &__down {
       grid-template-columns: 1fr;
-      grid-template-areas: 
-        "office"
-        "contact"
-        "terms"
-        "privacy"
-        "networks"
-        "rights"
-      ;
+      grid-template-areas:
+        'office'
+        'contact'
+        'terms'
+        'privacy'
+        'networks'
+        'rights';
       row-gap: 20px;
       * {
         text-align: center;
@@ -266,20 +317,19 @@
 
 @media (max-width: 430px) {
   .categories {
-    &__next, &__prev {
+    &__next,
+    &__prev {
       display: none;
     }
   }
   .collection {
     padding-right: 10px;
     grid-template-columns: minmax(70px, 100px) 1fr;
-    grid-template-areas: 
-      "img text"
-      ". prices"
-    ;
+    grid-template-areas:
+      'img text'
+      '. prices';
     &__prices {
       margin-top: -10px;
     }
   }
-
 }

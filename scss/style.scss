@@ -198,10 +198,13 @@ body {
 
 .categories {
   @include adaptiveValue('margin-bottom', 120, 80);
-  &__inner {}
+
+  // &__inner {}
+
   .container {
     position: relative;
   }
+
   &__title {
     @include adaptiveValue('margin-bottom', 72, 24);
   }
@@ -297,28 +300,104 @@ body {
 .collections {
   padding: 137px 0px 86px;
   background-color: #1d1e22;
-  // &__inner {}
+  &__inner {
+    display: grid;
+    grid-template: 
+      [start] "title switch" auto [row2]
+      [row2] ". ." clamp(25px, 7vw, 67px) [row3]
+      [row3] "grid grid" 1fr [row4]
+      [row5] "btn btn" auto [end] / 1fr 1fr
+    ;
+  }
 
   &__title {
-    @include adaptiveValue('margin-bottom', 65, 24);
+    grid-area: title;
+    align-self: center;
+  }
+
+  &__switch {
+    grid-area: switch;
+    justify-self: end;
   }
 
   &__grid {
+    grid-area: grid;
     @include adaptiveValue('margin-bottom', 72, 40);
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(270px, 520px));
     grid-template-rows: 1fr;
     overflow: hidden;
-    gap: 30px;
+    row-gap: 30px;
+    column-gap: 30px;
     justify-content: center;
   }
 
   &__btn {
+    grid-area: btn;
     display: flex;
     justify-content: center;
     * {
       font-size: 16px;
       padding: 15px 20px;
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 293px;
+  height: 70px;
+  background-color: $grey;
+  border-radius: 20px;
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    font-size: 16px;
+    line-height: calc(20 / 16 * 100%);
+    pointer-events: none;
+  }
+
+  &__first {
+    top: 25px;
+    left: 52px;
+  }
+
+  &__second {
+    top: 25px;
+    left: 190px;
+  }
+  
+  input:checked + .dot:before {
+    transform: translateX(135px);
+  }
+
+  .dot {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    cursor: pointer;
+    border-radius: 34px;
+    &::before {
+      content: '';
+      position: absolute;
+      width: 150px;
+      height: 60px;
+      left: 5px;
+      top: 5px;
+      background-color: #1D1E22;
+      transition: .4s;
+      border-radius: 20px;
+      z-index: 1;
     }
   }
 }
