@@ -19,6 +19,12 @@
     }
   }
 
+  .insights {
+    &__posts {
+      grid-template-columns: repeat(2, minmax(auto, 500px));
+    }
+  }
+
   .footer {
     &__up {
       grid-template-columns: minmax(150px, 231px) minmax(auto, 231px) auto;
@@ -194,6 +200,15 @@
       &::before {
         color: $white;
       }
+    }
+  }
+
+  .insights {
+    &__posts {
+      grid-template: 1fr / minmax(auto, 500px);
+      row-gap: 0;
+      grid-auto-rows: 0;
+      overflow-y: hidden;
     }
   }
 
