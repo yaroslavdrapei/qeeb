@@ -2,7 +2,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const burger = document.querySelector('.burger');
   burger.addEventListener('click', () => {
     burger.classList.toggle('active')
-    document.querySelector('.menu').classList.toggle('active')
+    if (burger.classList.contains('active')) {
+      document.querySelector('.menu').style.top = `${window.scrollY}px`
+    } else {
+      document.querySelector('.menu').style.top = ''
+    }
     document.body.classList.toggle('lock')
   })
 
